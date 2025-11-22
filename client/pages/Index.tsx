@@ -327,48 +327,55 @@ export default function Index() {
         </div>
 
         {/* Hot & Recent Posts */}
-        <div className="max-w-7xl mx-auto px-4 py-12">
-          <h2 className="text-3xl md:text-4xl font-black mb-8">
-            {filteredPosts.length === 0 ? "No Posts Found" : "Hot & Recent Posts"}
-          </h2>
+        <div className="max-w-7xl mx-auto px-4 py-16">
+          <div className="mb-12">
+            <h2 className="text-5xl md:text-6xl font-black mb-3">
+              {filteredPosts.length === 0 ? "No Posts Found" : "🔥 Hot & Recent Posts"}
+            </h2>
+            <p className="text-muted-foreground">
+              {filteredPosts.length === 0
+                ? "Try adjusting your search filters"
+                : `Showing ${displayedPosts.length} of ${filteredPosts.length} posts`}
+            </p>
+          </div>
 
           {displayedPosts.length > 0 ? (
             <>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-12">
                 {displayedPosts.map((post) => (
                   <div
                     key={post.id}
-                    className="group bg-card border border-border rounded-lg overflow-hidden hover:border-accent transition-colors duration-300 cursor-pointer"
+                    className="group bg-card border border-border rounded-xl overflow-hidden hover:border-accent hover:shadow-xl transition-all duration-300 cursor-pointer hover:-translate-y-1"
                   >
                     {post.thumbnail && (
                       <div className="w-full h-40 bg-muted overflow-hidden">
                         <img
                           src={post.thumbnail}
                           alt={post.title}
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                         />
                       </div>
                     )}
-                    <div className="p-4">
-                      <h3 className="font-bold text-foreground text-lg line-clamp-2 mb-2">
+                    <div className="p-5">
+                      <h3 className="font-bold text-foreground text-base line-clamp-2 mb-3 group-hover:text-accent transition-colors">
                         {post.title}
                       </h3>
-                      <p className="text-sm text-muted-foreground line-clamp-3 mb-3">
+                      <p className="text-sm text-muted-foreground line-clamp-3 mb-4">
                         {post.description}
                       </p>
-                      <div className="flex flex-wrap gap-2 text-xs">
+                      <div className="flex flex-wrap gap-2">
                         {post.country && (
-                          <span className="bg-accent bg-opacity-20 text-accent px-2 py-1 rounded">
+                          <span className="inline-block bg-accent/20 text-accent px-3 py-1 rounded-full text-xs font-medium">
                             {post.country}
                           </span>
                         )}
                         {post.city && (
-                          <span className="bg-accent bg-opacity-20 text-accent px-2 py-1 rounded">
+                          <span className="inline-block bg-accent/20 text-accent px-3 py-1 rounded-full text-xs font-medium">
                             {post.city}
                           </span>
                         )}
                         {post.server && (
-                          <span className="bg-accent bg-opacity-20 text-accent px-2 py-1 rounded">
+                          <span className="inline-block bg-accent/20 text-accent px-3 py-1 rounded-full text-xs font-medium">
                             {post.server}
                           </span>
                         )}
@@ -380,24 +387,24 @@ export default function Index() {
 
               {/* Pagination */}
               {totalPages > 1 && (
-                <div className="flex justify-center gap-4">
+                <div className="flex justify-center items-center gap-3">
                   <button
                     onClick={() => setCurrentPage(Math.max(1, currentPage - 1))}
                     disabled={currentPage === 1}
-                    className="px-4 py-2 bg-accent text-accent-foreground rounded-lg hover:bg-opacity-90 disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="px-4 py-2 bg-accent text-accent-foreground font-medium rounded-lg hover:bg-accent/90 disabled:opacity-40 disabled:cursor-not-allowed transition-all"
                   >
-                    Previous
+                    ← Previous
                   </button>
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-1.5">
                     {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
                       <button
                         key={page}
                         onClick={() => setCurrentPage(page)}
                         className={cn(
-                          "px-3 py-2 rounded-lg transition-colors",
+                          "w-10 h-10 rounded-lg font-medium transition-all text-sm",
                           currentPage === page
                             ? "bg-accent text-accent-foreground"
-                            : "bg-card border border-border hover:border-accent"
+                            : "bg-card border border-border hover:border-accent text-foreground"
                         )}
                       >
                         {page}
@@ -407,15 +414,15 @@ export default function Index() {
                   <button
                     onClick={() => setCurrentPage(Math.min(totalPages, currentPage + 1))}
                     disabled={currentPage === totalPages}
-                    className="px-4 py-2 bg-accent text-accent-foreground rounded-lg hover:bg-opacity-90 disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="px-4 py-2 bg-accent text-accent-foreground font-medium rounded-lg hover:bg-accent/90 disabled:opacity-40 disabled:cursor-not-allowed transition-all"
                   >
-                    Next
+                    Next →
                   </button>
                 </div>
               )}
             </>
           ) : (
-            <div className="text-center py-12">
+            <div className="text-center py-16">
               <p className="text-muted-foreground text-lg">
                 No posts match your search criteria. Try adjusting your filters.
               </p>
