@@ -101,7 +101,9 @@ export default function UppostPanel() {
     setUploadMessage("");
 
     if (!title || !description || !media || !thumbnail) {
-      setUploadError("Please fill in all required fields including thumbnail and media");
+      setUploadError(
+        "Please fill in all required fields including thumbnail and media",
+      );
       return;
     }
 
@@ -142,7 +144,10 @@ export default function UppostPanel() {
       <div className="min-h-screen bg-background text-foreground flex flex-col animate-fadeIn">
         <Header />
         <div className="flex-1 flex items-center justify-center px-4 py-12">
-          <div className="w-full max-w-md animate-fadeIn" style={{ animationDelay: "0.1s" }}>
+          <div
+            className="w-full max-w-md animate-fadeIn"
+            style={{ animationDelay: "0.1s" }}
+          >
             <div className="bg-card border border-border rounded-xl p-10 shadow-lg hover:shadow-xl transition-shadow duration-300">
               <div className="mb-2 w-10 h-10 bg-accent rounded-lg flex items-center justify-center shadow-md">
                 <Upload className="w-5 h-5 text-accent-foreground" />
@@ -274,7 +279,10 @@ export default function UppostPanel() {
                   className="hidden"
                   id="thumbnail-upload"
                 />
-                <label htmlFor="thumbnail-upload" className="cursor-pointer block">
+                <label
+                  htmlFor="thumbnail-upload"
+                  className="cursor-pointer block"
+                >
                   {thumbnail ? (
                     <div className="space-y-3">
                       <div className="text-3xl">✓</div>
@@ -282,7 +290,8 @@ export default function UppostPanel() {
                         {thumbnail.name}
                       </p>
                       <p className="text-xs text-muted-foreground">
-                        {(thumbnail.size / 1024 / 1024).toFixed(2)} MB • Ready to upload
+                        {(thumbnail.size / 1024 / 1024).toFixed(2)} MB • Ready
+                        to upload
                       </p>
                     </div>
                   ) : (

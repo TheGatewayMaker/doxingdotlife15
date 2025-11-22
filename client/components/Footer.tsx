@@ -16,9 +16,15 @@ export default function Footer() {
               📂 Categories
             </h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li className="hover:text-accent transition-colors">🌍 By Country</li>
-              <li className="hover:text-accent transition-colors">🏙️ By City</li>
-              <li className="hover:text-accent transition-colors">🖥️ By Server</li>
+              <li className="hover:text-accent transition-colors">
+                🌍 By Country
+              </li>
+              <li className="hover:text-accent transition-colors">
+                🏙️ By City
+              </li>
+              <li className="hover:text-accent transition-colors">
+                🖥️ By Server
+              </li>
             </ul>
           </div>
           <div className="animate-fadeIn" style={{ animationDelay: "0.3s" }}>
@@ -26,9 +32,15 @@ export default function Footer() {
               ⭐ Features
             </h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li className="hover:text-accent transition-colors">🔎 Advanced Search</li>
-              <li className="hover:text-accent transition-colors">📊 Comprehensive Database</li>
-              <li className="hover:text-accent transition-colors">🔄 Regular Updates</li>
+              <li className="hover:text-accent transition-colors">
+                🔎 Advanced Search
+              </li>
+              <li className="hover:text-accent transition-colors">
+                📊 Comprehensive Database
+              </li>
+              <li className="hover:text-accent transition-colors">
+                🔄 Regular Updates
+              </li>
             </ul>
           </div>
         </div>

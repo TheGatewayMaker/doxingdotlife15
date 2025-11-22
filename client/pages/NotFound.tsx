@@ -18,7 +18,10 @@ const NotFound = () => {
     <div className="min-h-screen bg-background text-foreground flex flex-col animate-fadeIn">
       <Header />
       <div className="flex-1 flex items-center justify-center px-4 py-12">
-        <div className="text-center max-w-md animate-fadeIn" style={{ animationDelay: "0.1s" }}>
+        <div
+          className="text-center max-w-md animate-fadeIn"
+          style={{ animationDelay: "0.1s" }}
+        >
           <div className="text-6xl sm:text-7xl md:text-8xl font-black mb-4 text-accent">
             404
           </div>

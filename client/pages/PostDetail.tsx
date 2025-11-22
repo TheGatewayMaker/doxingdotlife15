@@ -19,7 +19,7 @@ export default function PostDetail() {
         const data = await response.json();
         const posts = Array.isArray(data.posts) ? data.posts : [];
         const foundPost = posts.find((p: Post) => p.id === postId);
-        
+
         if (foundPost) {
           setPosts(foundPost);
         } else {
@@ -59,7 +59,9 @@ export default function PostDetail() {
         <Header />
         <main className="flex-1 w-full flex items-center justify-center">
           <div className="text-center">
-            <h2 className="text-2xl font-bold mb-4">{error || "Post not found"}</h2>
+            <h2 className="text-2xl font-bold mb-4">
+              {error || "Post not found"}
+            </h2>
             <button
               onClick={() => navigate("/")}
               className="px-4 py-2 bg-accent text-accent-foreground font-medium rounded-lg hover:bg-accent/90 transition-all"
@@ -88,7 +90,10 @@ export default function PostDetail() {
           </button>
 
           {/* Post Content */}
-          <div className="bg-card border border-border rounded-xl overflow-hidden shadow-lg animate-fadeIn" style={{ animationDelay: "0.1s" }}>
+          <div
+            className="bg-card border border-border rounded-xl overflow-hidden shadow-lg animate-fadeIn"
+            style={{ animationDelay: "0.1s" }}
+          >
             {/* Thumbnail */}
             {post.thumbnail && (
               <div className="w-full h-96 bg-muted overflow-hidden">
@@ -128,7 +133,8 @@ export default function PostDetail() {
 
               {/* Created Date */}
               <p className="text-muted-foreground mb-8">
-                Posted on {new Date(post.createdAt).toLocaleDateString("en-US", {
+                Posted on{" "}
+                {new Date(post.createdAt).toLocaleDateString("en-US", {
                   year: "numeric",
                   month: "long",
                   day: "numeric",
@@ -150,7 +156,10 @@ export default function PostDetail() {
                   <h2 className="text-2xl font-bold mb-6">📎 Attached Media</h2>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     {post.mediaFiles.map((file, idx) => (
-                      <div key={idx} className="bg-muted rounded-lg overflow-hidden border border-border hover:border-accent transition-colors">
+                      <div
+                        key={idx}
+                        className="bg-muted rounded-lg overflow-hidden border border-border hover:border-accent transition-colors"
+                      >
                         {file.type.startsWith("image/") ? (
                           <img
                             src={file.url}
@@ -165,7 +174,9 @@ export default function PostDetail() {
                           />
                         )}
                         <div className="p-4">
-                          <p className="text-sm text-muted-foreground truncate">{file.name}</p>
+                          <p className="text-sm text-muted-foreground truncate">
+                            {file.name}
+                          </p>
                         </div>
                       </div>
                     ))}

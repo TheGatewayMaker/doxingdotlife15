@@ -13,7 +13,9 @@ export default function Header() {
           className="flex items-center gap-3 hover:opacity-80 transition-opacity"
         >
           <div className="w-10 h-10 bg-gradient-to-br from-accent to-accent/80 rounded-lg flex items-center justify-center shadow-md">
-            <span className="text-accent-foreground font-black text-lg">🔍</span>
+            <span className="text-accent-foreground font-black text-lg">
+              🔍
+            </span>
           </div>
           <span className="font-black text-lg text-foreground hidden sm:inline">
             Doxing Dot Life

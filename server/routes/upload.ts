@@ -19,7 +19,9 @@ export const handleUpload: RequestHandler = async (req, res) => {
   try {
     const { title, description, country, city, server } =
       req.body as UploadRequest;
-    const files = req.files as { [fieldname: string]: Express.Multer.File[] } | undefined;
+    const files = req.files as
+      | { [fieldname: string]: Express.Multer.File[] }
+      | undefined;
 
     if (!title || !description || !files?.media || !files?.thumbnail) {
       res.status(400).json({ error: "Missing required fields" });

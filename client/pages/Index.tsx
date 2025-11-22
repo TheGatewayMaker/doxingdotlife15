@@ -423,7 +423,10 @@ export default function Index() {
             </div>
 
             {/* Search Bar */}
-            <div className="relative mb-10 animate-fadeIn" style={{ animationDelay: "0.2s" }}>
+            <div
+              className="relative mb-10 animate-fadeIn"
+              style={{ animationDelay: "0.2s" }}
+            >
               <input
                 type="text"
                 placeholder="Search for individuals..."
@@ -435,7 +438,10 @@ export default function Index() {
             </div>
 
             {/* Categories Section */}
-            <div className="mb-0 animate-fadeIn" style={{ animationDelay: "0.3s" }}>
+            <div
+              className="mb-0 animate-fadeIn"
+              style={{ animationDelay: "0.3s" }}
+            >
               <h3 className="text-sm font-black text-foreground mb-6 uppercase tracking-widest">
                 📂 Filter by Category
               </h3>
