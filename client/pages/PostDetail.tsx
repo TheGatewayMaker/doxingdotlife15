@@ -181,7 +181,7 @@ export default function PostDetail() {
 
               {/* Media */}
               {post.mediaFiles && post.mediaFiles.length > 0 && (
-                <MediaViewer
+                <SimpleMediaGallery
                   mediaFiles={post.mediaFiles}
                   postTitle={post.title}
                 />
