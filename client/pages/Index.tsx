@@ -563,16 +563,18 @@ export default function Index() {
                         setCitySearch("");
                       }}
                       className="absolute top-3 right-3 text-accent hover:text-accent/80 transition-colors"
+                      title="Clear selection"
                     >
-                      ✕
+                      <CloseIcon className="w-4 h-4" />
                     </button>
                   )}
                 </div>
 
                 {/* Server Dropdown */}
                 <div className="relative group">
-                  <label className="text-sm font-bold text-foreground block mb-2">
-                    🖥️ By Server
+                  <label className="text-sm font-bold text-foreground block mb-3 flex items-center gap-2">
+                    <ServerIcon className="w-4 h-4 text-accent" />
+                    By Server
                   </label>
                   <input
                     type="text"
