@@ -171,7 +171,7 @@ export default function UppostPanel() {
           >
             <div className="bg-card border border-border rounded-xl p-10 shadow-lg hover:shadow-xl transition-shadow duration-300">
               <div className="mb-2 w-10 h-10 bg-accent rounded-lg flex items-center justify-center shadow-md">
-                <Upload className="w-5 h-5 text-accent-foreground" />
+                <UploadIcon className="w-5 h-5 text-accent-foreground" />
               </div>
               <h1 className="text-4xl font-black mb-2 text-foreground">
                 Uppost Panel
