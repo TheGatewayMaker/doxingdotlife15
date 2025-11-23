@@ -43,7 +43,7 @@ export default function Header() {
         <nav className="hidden md:flex items-center gap-8">
           <Link
             to="/"
-            className="flex items-center gap-2 text-sm font-semibold text-muted-foreground hover:text-accent transition-colors"
+            className="flex items-center gap-2 text-sm font-semibold text-gray-300 hover:text-white transition-colors"
           >
             <HomeIcon className="w-5 h-5" />
             Home
