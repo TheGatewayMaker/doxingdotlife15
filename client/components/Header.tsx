@@ -34,9 +34,7 @@ export default function Header() {
           <span className="font-black text-lg text-white hidden sm:inline">
             Doxing Dot Life
           </span>
-          <span className="font-black text-lg text-white sm:hidden">
-            DDL
-          </span>
+          <span className="font-black text-lg text-white sm:hidden">DDL</span>
         </Link>
 
         {/* Desktop Navigation */}
