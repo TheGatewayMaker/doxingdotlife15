@@ -621,22 +621,22 @@ export default function Index() {
           <div className="mb-10 sm:mb-12 animate-fadeIn">
             {isLoadingPosts ? (
               <>
-                <h2 className="text-5xl md:text-6xl font-black mb-3 flex items-center gap-3">
+                <h2 className="text-5xl md:text-6xl font-black mb-3 flex items-center gap-3 text-white">
                   <span className="inline-block animate-spin">
-                    <div className="w-10 h-10 border-3 border-muted border-t-accent rounded-full"></div>
+                    <div className="w-10 h-10 border-3 border-slate-700 border-t-blue-500 rounded-full"></div>
                   </span>
                   Loading Posts
                 </h2>
-                <p className="text-muted-foreground">
+                <p className="text-gray-400">
                   Fetching the latest posts for you...
                 </p>
               </>
             ) : filteredPosts.length === 0 ? (
               <>
-                <h2 className="text-5xl md:text-6xl font-black mb-3">
+                <h2 className="text-5xl md:text-6xl font-black mb-3 text-white">
                   No Posts Found
                 </h2>
-                <p className="text-muted-foreground">
+                <p className="text-gray-400">
                   {hasSearchFilters
                     ? "Try adjusting your search filters"
                     : "No posts available at the moment"}
@@ -645,12 +645,12 @@ export default function Index() {
             ) : (
               <>
                 <div className="flex items-center gap-3">
-                  <FireIcon className="w-8 h-8 text-accent" />
-                  <h2 className="text-5xl md:text-6xl font-black">
+                  <FireIcon className="w-8 h-8 text-yellow-500" />
+                  <h2 className="text-5xl md:text-6xl font-black text-white">
                     Hot & Recent Posts
                   </h2>
                 </div>
-                <p className="text-muted-foreground mt-3">
+                <p className="text-gray-400 mt-3">
                   Showing {displayedPosts.length} of {filteredPosts.length}{" "}
                   posts
                 </p>
