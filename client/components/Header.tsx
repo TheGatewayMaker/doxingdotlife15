@@ -114,7 +114,7 @@ export default function Header() {
                 <Link
                   to="/dox-anyone"
                   onClick={closeSidebar}
-                  className="flex items-center gap-3 w-full px-4 py-3 text-accent font-semibold hover:bg-accent/10 rounded-lg transition-colors bg-accent/5"
+                  className="flex items-center gap-3 w-full px-4 py-3 text-yellow-500 font-semibold hover:bg-yellow-500/10 rounded-lg transition-colors bg-yellow-500/5"
                 >
                   🔍 Dox Anyone
                 </Link>
