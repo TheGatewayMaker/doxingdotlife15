@@ -25,7 +25,29 @@ const generateToken = (): string => {
 
 export const handleLogin: RequestHandler = async (req, res) => {
   try {
-    const { username, password } = req.body as AuthRequest;
+    let username: string | undefined;
+    let password: string | undefined;
+
+    // Handle both JSON body and form data
+    if (typeof req.body === "string") {
+      try {
+        const parsed = JSON.parse(req.body);
+        username = parsed.username;
+        password = parsed.password;
+      } catch {
+        console.error("Failed to parse request body as JSON:", req.body);
+      }
+    } else if (typeof req.body === "object" && req.body !== null) {
+      username = req.body.username;
+      password = req.body.password;
+    }
+
+    // Validate that username and password are provided
+    if (!username || !password) {
+      console.error("Missing credentials in request. Body:", req.body);
+      res.status(400).json({ error: "Username and password required" });
+      return;
+    }
 
     // Get credentials from environment variables
     const validUsername = process.env.ADMIN_USERNAME;
@@ -48,12 +70,11 @@ export const handleLogin: RequestHandler = async (req, res) => {
       return;
     }
 
-    if (!username || !password) {
-      res.status(400).json({ error: "Username and password required" });
-      return;
-    }
-
+    // Validate credentials
     if (username !== validUsername || password !== validPassword) {
+      console.warn(
+        `Login attempt failed. Provided username: ${username}, Expected: ${validUsername}`,
+      );
       res.status(401).json({ error: "Invalid username or password" });
       return;
     }
