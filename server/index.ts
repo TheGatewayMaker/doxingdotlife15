@@ -11,7 +11,6 @@ import {
   handleUpdatePost,
 } from "./routes/admin";
 import {
-  handleLogin,
   handleLogout,
   handleCheckAuth,
   authMiddleware,
